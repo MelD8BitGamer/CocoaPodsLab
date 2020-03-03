@@ -8,4 +8,5 @@ target 'CocoaPodsLab' do
   # Pods for CocoaPodsLab
 pod 'Alamofire'
 pod 'SnapKit'
+pod 'CollectionViewSlantedLayout', '~> 3.1'
 end
