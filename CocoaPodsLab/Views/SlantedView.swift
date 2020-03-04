@@ -8,6 +8,7 @@
 
 import UIKit
 import CollectionViewSlantedLayout
+import SnapKit
 //Step1:pod install pod 'CollectionViewSlantedLayout', '~> 3.1'
 //step2: import CollectionViewLayout This is what is going to give me a slanted collectionViewLayout
 

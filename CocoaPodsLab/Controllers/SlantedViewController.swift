@@ -10,7 +10,7 @@ import UIKit
 import CollectionViewSlantedLayout
 
 class SlantedViewController: UIViewController {
-
+//TODO: fix imageView in cellforitemat datasource
     public lazy var slantedView = SlantedView()
     private var people = [User]() {
         didSet {
@@ -29,10 +29,22 @@ class SlantedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        slantedView.collectionView.register(SlantedCollectVCell.self, forCellWithReuseIdentifier: "SlantedCollectVCell")
+        slantedView.collectionView.dataSource = self
+        loadPeople()
         
     }
 
-
+    private func loadPeople() {
+        APIClient.getUsers { [weak self] (result) in
+            switch result {
+            case .failure(let appError):
+                fatalError("cannot load people its an apocalypse \(appError)")
+            case .success(let users):
+                self?.people = users
+            }
+        }
+    }
 }
 extension SlantedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -40,10 +52,12 @@ extension SlantedViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailedSlantedCollectVCell", for: indexPath) as? DetailedSlantedCollectVCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SlantedCollectVCell", for: indexPath) as? SlantedCollectVCell else {
             fatalError("Cannot Deque to cell") }
         let person = people[indexPath.row]
-        
+       // cell.imageView = person.picture.large.description
+        cell.nameLabel.text = "First: \(person.name.first), Last: \(person.name.last)"
+        cell.locationLabel.text = "Location: \(person.location.state)"
         return cell
     }
     

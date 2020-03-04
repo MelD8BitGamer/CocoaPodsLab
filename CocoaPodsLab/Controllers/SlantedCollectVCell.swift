@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import ImageKit
 import CollectionViewSlantedLayout
 //Step4: Created a new cocoaTouch file and subclass it CollectionViewSlantedCell
 //Step5: import CollectionViewSlantedCell
 
-class DetailedSlantedCollectVCell: CollectionViewSlantedCell {
+class SlantedCollectVCell: CollectionViewSlantedCell {
     
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -85,5 +86,20 @@ class DetailedSlantedCollectVCell: CollectionViewSlantedCell {
             nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
             nameLabel.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05)
         ])
+    }
+    
+    public func configureCell(for user: User){
+        imageView.getImage(with: user.picture.large) { (result) in
+            switch result{
+            case .failure(let error):
+                self.imageView.image = UIImage(systemName: "starTrek")
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self.imageView.image = image
+                }
+            }
+        }
+        nameLabel.text = "\(user.name.first),  \(user.name.last)"
+        locationLabel.text = user.location.state
     }
 }

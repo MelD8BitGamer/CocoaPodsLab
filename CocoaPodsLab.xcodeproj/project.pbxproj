@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,11 +14,13 @@
 		4D565509240EEAA5006C5507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D565508240EEAA5006C5507 /* Assets.xcassets */; };
 		4D56550C240EEAA5006C5507 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D56550A240EEAA5006C5507 /* LaunchScreen.storyboard */; };
 		4D565514240EF962006C5507 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D565513240EF962006C5507 /* Model.swift */; };
-		4D565516240EF9EE006C5507 /* API Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D565515240EF9EE006C5507 /* API Client.swift */; };
+		4D565516240EF9EE006C5507 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D565515240EF9EE006C5507 /* APIClient.swift */; };
 		4D56551E240EFCC7006C5507 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D56551D240EFCC7006C5507 /* DetailView.swift */; };
 		4D565520240EFCD7006C5507 /* SlantedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D56551F240EFCD7006C5507 /* SlantedView.swift */; };
 		4D565522240EFCEC006C5507 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D565521240EFCEC006C5507 /* DetailViewController.swift */; };
-		4D565524240F0260006C5507 /* DetailedSlantedCollectVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D565523240F0260006C5507 /* DetailedSlantedCollectVCell.swift */; };
+		4D565524240F0260006C5507 /* SlantedCollectVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D565523240F0260006C5507 /* SlantedCollectVCell.swift */; };
+		4D565527240F1C7C006C5507 /* NetworkHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 4D565526240F1C7C006C5507 /* NetworkHelper */; };
+		4D56552A240F1DF9006C5507 /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4D565529240F1DF9006C5507 /* ImageKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,11 +32,11 @@
 		4D56550B240EEAA5006C5507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D56550D240EEAA5006C5507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D565513240EF962006C5507 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Model.swift; path = CocoaPodsLab/Model/Model.swift; sourceTree = SOURCE_ROOT; };
-		4D565515240EF9EE006C5507 /* API Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API Client.swift"; sourceTree = "<group>"; };
+		4D565515240EF9EE006C5507 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		4D56551D240EFCC7006C5507 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		4D56551F240EFCD7006C5507 /* SlantedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlantedView.swift; sourceTree = "<group>"; };
 		4D565521240EFCEC006C5507 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		4D565523240F0260006C5507 /* DetailedSlantedCollectVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailedSlantedCollectVCell.swift; path = CocoaPodsLab/Controllers/DetailedSlantedCollectVCell.swift; sourceTree = SOURCE_ROOT; };
+		4D565523240F0260006C5507 /* SlantedCollectVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SlantedCollectVCell.swift; path = CocoaPodsLab/Controllers/SlantedCollectVCell.swift; sourceTree = SOURCE_ROOT; };
 		6AEAFC77FF8F909ADD2489F4 /* Pods-CocoaPodsLab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPodsLab.debug.xcconfig"; path = "Target Support Files/Pods-CocoaPodsLab/Pods-CocoaPodsLab.debug.xcconfig"; sourceTree = "<group>"; };
 		7B14272368335D40EDC39C89 /* Pods-CocoaPodsLab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPodsLab.release.xcconfig"; path = "Target Support Files/Pods-CocoaPodsLab/Pods-CocoaPodsLab.release.xcconfig"; sourceTree = "<group>"; };
 		9169DD2A3C8D1D8F6619DD5D /* Pods_CocoaPodsLab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaPodsLab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +48,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				18A15570647DD8675B7060F1 /* Pods_CocoaPodsLab.framework in Frameworks */,
+				4D565527240F1C7C006C5507 /* NetworkHelper in Frameworks */,
+				4D56552A240F1DF9006C5507 /* ImageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +128,7 @@
 		4D56551A240EFA45006C5507 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				4D565515240EF9EE006C5507 /* API Client.swift */,
+				4D565515240EF9EE006C5507 /* APIClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -141,7 +145,7 @@
 		4D56551C240EFCA0006C5507 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				4D565523240F0260006C5507 /* DetailedSlantedCollectVCell.swift */,
+				4D565523240F0260006C5507 /* SlantedCollectVCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -172,6 +176,10 @@
 			dependencies = (
 			);
 			name = CocoaPodsLab;
+			packageProductDependencies = (
+				4D565526240F1C7C006C5507 /* NetworkHelper */,
+				4D565529240F1DF9006C5507 /* ImageKit */,
+			);
 			productName = CocoaPodsLab;
 			productReference = 4D5654FC240EEAA4006C5507 /* CocoaPodsLab.app */;
 			productType = "com.apple.product-type.application";
@@ -200,6 +208,10 @@
 				Base,
 			);
 			mainGroup = 4D5654F3240EEAA4006C5507;
+			packageReferences = (
+				4D565525240F1C7C006C5507 /* XCRemoteSwiftPackageReference "NetworkHelperSPM" */,
+				4D565528240F1DF9006C5507 /* XCRemoteSwiftPackageReference "ImageKit" */,
+			);
 			productRefGroup = 4D5654FD240EEAA4006C5507 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -272,10 +284,10 @@
 				4D56551E240EFCC7006C5507 /* DetailView.swift in Sources */,
 				4D565500240EEAA4006C5507 /* AppDelegate.swift in Sources */,
 				4D565502240EEAA4006C5507 /* SceneDelegate.swift in Sources */,
-				4D565524240F0260006C5507 /* DetailedSlantedCollectVCell.swift in Sources */,
+				4D565524240F0260006C5507 /* SlantedCollectVCell.swift in Sources */,
 				4D565520240EFCD7006C5507 /* SlantedView.swift in Sources */,
 				4D565514240EF962006C5507 /* Model.swift in Sources */,
-				4D565516240EF9EE006C5507 /* API Client.swift in Sources */,
+				4D565516240EF9EE006C5507 /* APIClient.swift in Sources */,
 				4D565522240EFCEC006C5507 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,6 +480,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4D565525240F1C7C006C5507 /* XCRemoteSwiftPackageReference "NetworkHelperSPM" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexpaul/NetworkHelperSPM";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.6;
+			};
+		};
+		4D565528240F1DF9006C5507 /* XCRemoteSwiftPackageReference "ImageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexpaul/ImageKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4D565526240F1C7C006C5507 /* NetworkHelper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D565525240F1C7C006C5507 /* XCRemoteSwiftPackageReference "NetworkHelperSPM" */;
+			productName = NetworkHelper;
+		};
+		4D565529240F1DF9006C5507 /* ImageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D565528240F1DF9006C5507 /* XCRemoteSwiftPackageReference "ImageKit" */;
+			productName = ImageKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4D5654F4240EEAA4006C5507 /* Project object */;
 }

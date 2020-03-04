@@ -15,7 +15,7 @@ struct ResultsWrapper: Codable {
 }
 
 struct User: Codable {
-    let gender: String
+    let gender: String?
     let name: Name
     let location: Location
     let email: String
